@@ -1,0 +1,9 @@
+com.oraen.oxygen.common
+com.oraen.oxygen.common.design.Responsibility
+com.oraen.oxygen.common.design.observer
+com.oraen.oxygen.common.entity
+com.oraen.oxygen.common.enumeration
+com.oraen.oxygen.common.exception
+com.oraen.oxygen.common.structure.DuplexMap
+com.oraen.oxygen.common.util
+com.oraen.oxygen.common.util.plus
