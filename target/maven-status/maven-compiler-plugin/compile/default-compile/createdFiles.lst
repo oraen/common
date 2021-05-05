@@ -11,6 +11,7 @@ com\oraen\oxygen\common\util\plus\StringReaderPlus.class
 com\oraen\oxygen\common\util\RandomUtil.class
 com\oraen\oxygen\common\design\observer\SimpleSubject.class
 com\oraen\oxygen\common\util\ListUtil.class
+com\oraen\oxygen\common\Annotation\Unfinished.class
 com\oraen\oxygen\common\exception\StringAnalysisException.class
 com\oraen\oxygen\common\entity\Result.class
 com\oraen\oxygen\common\enumeration\JSONType.class

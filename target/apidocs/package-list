@@ -1,4 +1,5 @@
 com.oraen.oxygen.common
+com.oraen.oxygen.common.Annotation
 com.oraen.oxygen.common.design.Responsibility
 com.oraen.oxygen.common.design.observer
 com.oraen.oxygen.common.entity

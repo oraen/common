@@ -31,6 +31,16 @@ public class ListUtil {
         return list;
     }
 
+    public static Class<?> getContentType(Collection<?> col) {
+        if(col != null && col.size() != 0){
+            for(Object o : col){
+                return o.getClass();
+            }
+        }
+
+        throw new IllegalArgumentException("容器没有任何存储的对象， 无法获取类型");
+    }
+
 
 
 
