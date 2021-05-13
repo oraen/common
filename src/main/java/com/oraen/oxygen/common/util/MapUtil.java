@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.*;
 
 
+@SuppressWarnings("unchecked")
 public class MapUtil {
 
     public static boolean isEmpty(Map<?,?> map){
@@ -53,6 +54,15 @@ public class MapUtil {
         Map<String, Object> re = new HashMap<>();
         for(Map<String, ?> map : lists){
             re.putAll(map);
+        }
+        return re;
+    }
+
+
+    public static<K, V> Map<K, V> changeType(Map<?, ?> source){
+        Map<K, V> re = new HashMap<>(source.size() * 2); //防止0.75扩容影响效率
+        for(Map.Entry<?, ?> entry : source.entrySet()){
+            re.put((K)entry.getKey(), (V)entry.getValue());
         }
         return re;
     }

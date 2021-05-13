@@ -17,13 +17,20 @@ public class CommonUtil {
 
     }
 
-    public static<T> T translate(@NotNull Object source, Class<T> clazz){
+    public static<T> T translate(Object source, Class<T> clazz){
+        if(source == null || clazz == null){
+            return null;
+        }
+
         if(clazz.isInstance(source)){
             return (T)source;
         }else{
             String serialization;
             if(source instanceof String){
                 serialization = (String)source;
+                if(StringUtil.isBlank(serialization)){
+                    return null;
+                }
             }else{
                 serialization = JSON.stringify(source);
             }
@@ -48,9 +55,9 @@ public class CommonUtil {
                 }else{
                     return (T)Boolean.TRUE;
                 }
-            }else if(clazz == Map.class){
+            }else if(Map.class.isAssignableFrom(clazz)){
                 return (T)JSON.parseMap(serialization);
-            }else if(clazz == List.class){
+            }else if(List.class.isAssignableFrom(clazz)){
                 return (T)JSON.parseList(serialization);
             }else{
                 return JSON.parse(serialization, clazz);
@@ -58,4 +65,5 @@ public class CommonUtil {
         }
 
     }
+
 }

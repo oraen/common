@@ -51,11 +51,36 @@ public class ReflectUtil {
         return getAllFields(o).get(name);
     }
 
-    public static void setField(Object o, String name, Object value) {
+    public static Object getFieldValue(Object o, String name){
+        return getFieldValue(o, getField(o, name));
+    }
+
+    public static Object getFieldValue(Object o, Field field){
         try{
-            getField(o, name).set(o, value);
-        }catch (IllegalAccessException iae){
-            iae.printStackTrace();
+            return field.get(o);
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static void setField(Object o, String name, Object value) {
+        Field f = getField(o, name);
+        try{
+            f.set(o, value);
+        }catch (Exception e){
+            setFieldAuto(o, f, value.toString());
+        }
+    }
+
+
+    public static void setFieldAuto(Object o, Field f, String sValue) {
+        try{
+            Class<?> type = f.getType();
+            Object value = CommonUtil.translate(sValue, type);
+            f.set(o, value);
+        }catch (IllegalAccessException e){
+            e.printStackTrace();
         }
     }
 }

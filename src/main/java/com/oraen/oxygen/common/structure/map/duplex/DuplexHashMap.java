@@ -2,6 +2,7 @@ package com.oraen.oxygen.common.structure.map.duplex;
 
 import java.util.*;
 
+@SuppressWarnings("unchecked")
 public class DuplexHashMap<T1, T2> implements DuplexMap<T1, T2>{
     private Map<T1, T2> map1 = new HashMap<>();
     private Map<T2, T1> map2 = new HashMap<>();
@@ -84,15 +85,31 @@ public class DuplexHashMap<T1, T2> implements DuplexMap<T1, T2>{
 
     @Override
     public Set<T1> getKey1s() {
-        Set<T1> re = new HashSet<>(map1.keySet());
-        return re;
+        return new HashSet<>(map1.keySet());
 
     }
 
     @Override
     public Set<T2> getKey2s() {
-        Set<T2> re = new HashSet<>(map2.keySet());
-        return re;
+        return new HashSet<>(map2.keySet());
     }
 
+    public static<T1, T2> DuplexHashMap<T1, T2> parse(Map<?, ?> map){
+        DuplexHashMap<T1, T2> duplexHashMap = new DuplexHashMap<>();
+        for(Map.Entry<?, ?> entry : map.entrySet()){
+            duplexHashMap.put((T1)entry.getKey(), (T2)entry.getValue());
+        }
+        return null;
+
+    }
+
+    public static<T> DuplexHashMap<Integer, T> parse(List<T> list){
+        DuplexHashMap<Integer, T> duplexHashMap = new DuplexHashMap<>();
+        int i=0;
+        for(T t : list){
+            duplexHashMap.put(i, t);
+            i++;
+        }
+        return duplexHashMap;
+    }
 }

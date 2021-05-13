@@ -7,6 +7,8 @@ import java.lang.annotation.*;
 @Documented
 public @interface Check {
 
+    String value() default "";
+
     /** 字段的值要遵循的正则表达式 只对String类型的字段有效 */
     String norm() default ".*";
 

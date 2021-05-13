@@ -19,7 +19,7 @@ public abstract class FieldNode<E> implements BatchNode<E> {
     @Override
     public void repeat(E e) {
         for(Field f : ReflectUtil.getAllFields(e).values()){
-            if(f.isAnnotationPresent(attention)){
+            if(f.isAnnotationPresent(attention) || attention == Annotation.class){
                 dispose(e, f);
             }
         }
