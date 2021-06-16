@@ -50,4 +50,11 @@ public class StatisticsUtil {
     public static double ave(double... values){
         return sum(values) / values.length;
     }
+
+    public static int astrict(int source, int max){
+        while(source < 0){
+            source += max;
+        }
+        return source % max;
+    }
 }

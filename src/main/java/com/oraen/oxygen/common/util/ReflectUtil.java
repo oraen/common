@@ -73,6 +73,14 @@ public class ReflectUtil {
         }
     }
 
+    public static void setField(Object o, Field field, Object value) {
+        try{
+            field.set(o, value);
+        }catch (Exception e){
+            setFieldAuto(o, field, value.toString());
+        }
+    }
+
 
     public static void setFieldAuto(Object o, Field f, String sValue) {
         try{

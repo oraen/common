@@ -37,13 +37,5 @@ public class TestHttp {
 
     }
 
-    public void aaa(){
-        Map a = new HashMap(){
-            void aaa(){
-                int a=1;
 
-            }
-
-        };
-    }
 }

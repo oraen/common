@@ -1,7 +1,6 @@
 package com.oraen.oxygen.common.util;
 
-import com.alibaba.fastjson.JSONObject;
-import com.oraen.oxygen.common.ToJSON;
+import com.oraen.oxygen.common.json.ToJSON;
 import com.oraen.oxygen.common.enumeration.JSONType;
 import com.oraen.oxygen.common.exception.StringAnalysisException;
 import com.oraen.oxygen.common.exception.UnexpectedException;
