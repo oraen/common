@@ -6,7 +6,13 @@
     <groupId>com.oraen.oxygen</groupId>
     <artifactId>common</artifactId>
     <version>1.0.8</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>common-data</module>
+        <module>common-map</module>
+        <module>common-collection</module>
+        <module>json</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>common</name>
     <description>A base toolkit for development</description>
