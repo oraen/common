@@ -11,6 +11,8 @@
         <module>common-map</module>
         <module>common-collection</module>
         <module>json</module>
+        <module>common-math</module>
+        <module>common-core</module>
     </modules>
     <packaging>pom</packaging>
 
