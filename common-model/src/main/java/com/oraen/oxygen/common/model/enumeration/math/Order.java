@@ -1,4 +1,4 @@
-package com.oraen.oxygen.common.core.enumeration.math;
+package com.oraen.oxygen.common.model.enumeration.math;
 
 public enum Order {
     ASC

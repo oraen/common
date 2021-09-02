@@ -1,12 +1,8 @@
 package com.oraen.oxygen.common.math.ran;
 
-import com.oraen.oxygen.common.core.enumeration.math.Order;
-import com.oraen.oxygen.common.math.statistics.CheckUtil;
+import com.oraen.oxygen.common.model.enumeration.math.Order;
 
-import java.util.List;
-import java.util.Map;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 //静态工具类 不应该考虑用户的拓展和定制需求
 public class RandomUtil {

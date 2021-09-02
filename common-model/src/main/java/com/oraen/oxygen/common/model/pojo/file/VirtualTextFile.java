@@ -1,4 +1,4 @@
-package com.oraen.oxygen.common.core.model.file;
+package com.oraen.oxygen.common.model.pojo.file;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -49,5 +49,11 @@ public class VirtualTextFile extends VirtualFile{
 
     public void preAppend(String text) {
         super.preAppend(text.getBytes(charset));
+    }
+
+    public static VirtualTextFile createUseText(String text){
+        VirtualTextFile virtualTextFile = new VirtualTextFile();
+        virtualTextFile.setContent(text);
+        return virtualTextFile;
     }
 }

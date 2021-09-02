@@ -1,4 +1,4 @@
-package com.oraen.oxygen.common.core.enumeration.File;
+package com.oraen.oxygen.common.model.enumeration.File;
 
 public enum FileType {
     PHOTO

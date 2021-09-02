@@ -4,7 +4,7 @@ import java.util.*;
 
 @SuppressWarnings("unchecked")
 public class StatisticsTable<T> {
-    private Map<T, Integer> table;
+    private final Map<T, Integer> table;
 
     public StatisticsTable(){
         this(new HashMap<>());

@@ -1,10 +1,8 @@
 package com.oraen.oxygen.common.math.statistics;
 
-import com.oraen.oxygen.common.core.enumeration.math.Order;
+import com.oraen.oxygen.common.model.enumeration.math.Order;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class StatisticsUtil {
 

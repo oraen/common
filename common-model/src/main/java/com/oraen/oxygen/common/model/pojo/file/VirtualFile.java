@@ -1,6 +1,4 @@
-package com.oraen.oxygen.common.core.model.file;
-
-import java.util.Arrays;
+package com.oraen.oxygen.common.model.pojo.file;
 
 public class VirtualFile {
 

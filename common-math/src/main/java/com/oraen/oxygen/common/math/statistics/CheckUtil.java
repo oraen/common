@@ -1,7 +1,7 @@
 package com.oraen.oxygen.common.math.statistics;
 
 
-import com.oraen.oxygen.common.core.enumeration.math.Order;
+import com.oraen.oxygen.common.model.enumeration.math.Order;
 
 public class CheckUtil {
     public static boolean checkOrder(Order order, double... doubles){

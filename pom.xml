@@ -13,6 +13,7 @@
         <module>json</module>
         <module>common-math</module>
         <module>common-core</module>
+        <module>common-code</module>
     </modules>
     <packaging>pom</packaging>
 
