@@ -1,7 +1,6 @@
 package com.oraen.oxygen.common.util;
 
 
-import com.alibaba.fastjson.JSONObject;
 import com.oraen.oxygen.common.enumeration.HttpMethod;
 import com.sun.istack.internal.NotNull;
 import com.sun.istack.internal.Nullable;
@@ -9,7 +8,6 @@ import com.sun.istack.internal.Nullable;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 

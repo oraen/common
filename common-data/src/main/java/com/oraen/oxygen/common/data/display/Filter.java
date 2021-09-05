@@ -1,15 +1,15 @@
-package com.oraen.oxygen.common.data.core;
+package com.oraen.oxygen.common.data.display;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public interface Filter<E> {
+public interface Filter<E> extends Judge<E>{
 
     default List<E> filter(Collection<? extends E> list){
         List<E> re = new ArrayList<>();
         for(E e : list){
-            if(! isOut(e)){
+            if(isLegal(e)){
                 re.add(e);
             }
         }
@@ -17,5 +17,4 @@ public interface Filter<E> {
         return re;
     }
 
-    boolean isOut(E e);
 }

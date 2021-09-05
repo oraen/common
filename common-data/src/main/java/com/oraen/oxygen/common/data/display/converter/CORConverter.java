@@ -1,6 +1,6 @@
-package com.oraen.oxygen.common.data.core.converter;
+package com.oraen.oxygen.common.data.display.converter;
 
-import com.oraen.oxygen.common.data.core.Converter;
+import com.oraen.oxygen.common.data.display.Converter;
 
 //COF: Chain of Responsibility
 public abstract class CORConverter<T, S> implements Converter<T, S> {

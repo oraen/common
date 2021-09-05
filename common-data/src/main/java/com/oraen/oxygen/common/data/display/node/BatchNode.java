@@ -1,6 +1,6 @@
-package com.oraen.oxygen.common.data.core.node;
+package com.oraen.oxygen.common.data.display.node;
 
-import com.oraen.oxygen.common.data.core.WorkNode;
+import com.oraen.oxygen.common.data.display.WorkNode;
 
 import java.util.Collection;
 
