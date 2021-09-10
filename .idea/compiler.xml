@@ -6,12 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="common-collection" />
+        <module name="json" />
+        <module name="common-math" />
         <module name="common-code" />
         <module name="common-data" />
         <module name="common-model" />
-        <module name="common-math" />
-        <module name="common-collection" />
-        <module name="json" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
