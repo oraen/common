@@ -2,10 +2,13 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/common-code/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-code/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common-data/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-data/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common-math/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-math/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-model/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>
