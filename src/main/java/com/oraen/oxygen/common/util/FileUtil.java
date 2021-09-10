@@ -3,7 +3,6 @@ package com.oraen.oxygen.common.util;
 import com.oraen.oxygen.common.enumeration.FileType;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 
 public class FileUtil {
 

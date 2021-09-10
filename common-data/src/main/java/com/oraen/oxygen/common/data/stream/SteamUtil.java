@@ -1,13 +1,10 @@
-package com.oraen.oxygen.common.util;
+package com.oraen.oxygen.common.data.stream;
 
-import com.oraen.oxygen.common.exception.UnexpectedException;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.LinkedList;
-import java.util.List;
 
 public class SteamUtil {
 
@@ -19,15 +16,17 @@ public class SteamUtil {
 
     public static byte[] getBytes(InputStream is) throws IOException {
         BufferedInputStream bis = new BufferedInputStream(is);
-        int size = is.available();
-        byte[] bytes = new byte[size];
-        int read = bis.read(bytes);
-        bis.close();
-        if(size == read){
-            return bytes;
-        }else{
-            throw new UnexpectedException("获取byte数组时发生异常 大小为" + size + "，实际上是 " + read);
+        byte[] bytes = new byte[BUFFER_SIZE];
+        while(true){
+            int read = bis.read(bytes);
+            if(read == -1){
+                bis.close();
+                break;
+            }
+
         }
+
+        return null;
     }
 
 }

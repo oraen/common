@@ -6,29 +6,35 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="common-collection" />
-        <module name="json" />
         <module name="common-math" />
         <module name="common-code" />
         <module name="common-data" />
         <module name="common-model" />
       </profile>
+      <profile name="Annotation profile for common" enabled="true">
+        <sourceOutputDir name="../json/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../json/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="common-json" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cache" target="8" />
+      <module name="common-collection" target="8" />
       <module name="common-map" target="8" />
-      <module name="common-model" target="8" />
+      <module name="data" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="common" options="" />
-      <module name="common-code" options="-bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\jce.jar -Xlint:deprecation" />
-      <module name="common-collection" options="-bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\jce.jar -Xlint:deprecation" />
-      <module name="common-data" options="-bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\jce.jar -Xlint:deprecation" />
+      <module name="common-code" options="-bootclasspath $PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\rt.jar;$PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\jce.jar -Xlint:deprecation" />
+      <module name="common-collection" options="-bootclasspath $PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\rt.jar;$PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\jce.jar -Xlint:deprecation" />
+      <module name="common-data" options="-bootclasspath $PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\rt.jar;$PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\jce.jar -Xlint:deprecation" />
+      <module name="common-json" options="-bootclasspath $PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\rt.jar;$PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\jce.jar -Xlint:deprecation" />
       <module name="common-map" options="-bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\jce.jar -Xlint:deprecation" />
-      <module name="common-math" options="-bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\jce.jar -Xlint:deprecation" />
-      <module name="common-model" options="-bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\jce.jar -Xlint:deprecation" />
-      <module name="json" options="-bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\jce.jar -Xlint:deprecation" />
+      <module name="common-math" options="-bootclasspath $PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\rt.jar;$PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\jce.jar -Xlint:deprecation" />
+      <module name="common-model" options="-bootclasspath $PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\rt.jar;$PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\jce.jar -Xlint:deprecation" />
     </option>
   </component>
 </project>
