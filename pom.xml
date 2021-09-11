@@ -8,12 +8,11 @@
     <version>1.0.8</version>
     <modules>
         <module>common-data</module>
-        <module>common-map</module>
-        <module>common-collection</module>
-        <module>json</module>
+        <module>common-json</module>
         <module>common-math</module>
-        <module>common-core</module>
         <module>common-code</module>
+        <module>common-math</module>
+
     </modules>
     <packaging>pom</packaging>
 

@@ -10,9 +10,11 @@ public interface Instar {
 
     int getInt();
 
-    String getString();
+    boolean getBoolean();
 
-    Object getObject();
+    byte[] getBytes();
+
+    String getString();
 
     Map<String, Object> getMap();
 

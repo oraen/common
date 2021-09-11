@@ -5,7 +5,7 @@ import com.oraen.oxygen.common.data.display.Converter;
 //COF: Chain of Responsibility
 public abstract class CORConverter<T, S> implements Converter<T, S> {
 
-    CORConverter<? super T, S> next;
+    CORConverter<T, S> next;
 
     @Override
     public S convert(T t) {
@@ -20,15 +20,15 @@ public abstract class CORConverter<T, S> implements Converter<T, S> {
         return null;
     }
 
-    public CORConverter<? super T, S> getNext() {
+    public CORConverter<T, S> getNext() {
         return next;
     }
 
-    public void setNext(CORConverter<? super T, S> next) {
+    public void setNext(CORConverter<T, S> next) {
         this.next = next;
     }
 
-    public CORConverter<? super T, S> add(CORConverter<? super T, S> next) {
+    public CORConverter<T, S> add(CORConverter<T, S> next) {
         this.next = next;
         return next;
     }
