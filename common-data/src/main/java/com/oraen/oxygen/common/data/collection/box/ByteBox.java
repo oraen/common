@@ -3,21 +3,70 @@ package com.oraen.oxygen.common.data.collection.box;
 import com.oraen.oxygen.common.math.statistics.StatisticsUtil;
 import jdk.jfr.Threshold;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 public class ByteBox {
-    public static double THRESHOLD = 0.75;
+    public final static double THRESHOLD = 0.75;
 
-    public static int EXPAND = 2;
+    public final static double SURE_MULTIPLE = 2;
 
-    public static int DEFAULT_SIZE = 16384;
+    public final static int EXPAND = 2;
 
-    public static Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
+    public final static int DEFAULT_SIZE = 16384;
+
+    public final static Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
 
     private byte[] bytes;
 
     private int size = 0;
+
+    public ByteBox(){
+        this(DEFAULT_SIZE);
+    }
+
+    public ByteBox(int initSize){
+        this.bytes = new byte[initSize];
+
+    }
+
+    public ByteBox(InputStream is){
+        try{
+            int len = is.available();
+            int space = (int)(len * SURE_MULTIPLE);
+            this.bytes = new byte[space];
+            while(true){
+                byte[] cache = new byte[len];
+                int read = is.read(cache);
+                if(read != -1){
+                    add(cache, read);
+                }else{
+                    break;
+                }
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+            try{
+                is.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+    public ByteBox(byte[] bytes){
+        int len = bytes.length;
+        int space = (int)(len * SURE_MULTIPLE);
+        this.bytes = new byte[space];
+        this.add(bytes);
+        size = len;
+
+    }
 
     public ByteBox add(byte b){
         checkAddSpace(1);
@@ -27,11 +76,15 @@ public class ByteBox {
     }
 
     public ByteBox add(byte[] bs){
-        int len = bs.length;
-        checkAddSpace(len);
-        System.arraycopy(bs, 0, bytes, size, len);
-        size += len;
-        return this;
+        return add(bs, bs.length);
+    }
+
+    public ByteBox add(byte[] bs, int len){
+        return add(bs, 0, len);
+    }
+
+    public ByteBox add(byte[] bs, int startIndex, int len){
+        return insert(size, bs, startIndex, len);
     }
 
     public ByteBox remove(int index){
@@ -91,12 +144,15 @@ public class ByteBox {
     }
 
     public ByteBox insert(int poi, byte[] bs){
+        return insert(poi, bs, 0, bs.length);
+    }
+
+    public ByteBox insert(int poi, byte[] bs, int startIndex, int len){
         checkArg(poi);
-        int len = bytes.length;
         checkAddSpace(len);
         System.arraycopy(bytes, poi, bytes, poi + len, size - poi);
         size += len;
-        System.arraycopy(bs, 0, bytes, poi, len);
+        System.arraycopy(bs, startIndex, bytes, poi, len);
         return this;
     }
 

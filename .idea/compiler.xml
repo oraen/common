@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="json" />
         <module name="common-model" />
         <module name="common-data" />
         <module name="common-code" />
@@ -24,6 +23,7 @@
       <module name="common-collection" target="8" />
       <module name="common-map" target="8" />
       <module name="data" target="8" />
+      <module name="json" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

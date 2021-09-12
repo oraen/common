@@ -6,7 +6,6 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/common-model/pom.xml" />
-        <option value="$PROJECT_DIR$/common-json/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
