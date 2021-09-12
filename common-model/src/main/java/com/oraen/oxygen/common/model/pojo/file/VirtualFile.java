@@ -1,5 +1,7 @@
 package com.oraen.oxygen.common.model.pojo.file;
 
+import com.oraen.oxygen.common.data.collection.box.ByteBox;
+
 public class VirtualFile {
 
     private static final String DEFAULT_ROOT = "/";
@@ -10,7 +12,7 @@ public class VirtualFile {
 
     private String name;
 
-    private byte[] content;
+    private ByteBox content;
 
     public VirtualFile(){
         this(DEFAULT_FILE_NAME);
@@ -62,27 +64,21 @@ public class VirtualFile {
     }
 
     public byte[] getContent() {
-        return content;
+        return content.get();
     }
 
-    public void setContent(byte[] content) {
+    public void setContent(byte[] bytes) {
         if(content == null){
-            content = new byte[0];
+            this.content = new ByteBox(0);
         }
-        this.content = content;
+        this.content = new ByteBox(bytes);
     }
 
-    public void append(byte[] content) {
-        byte[] n = new byte[this.content.length + content.length];
-        System.arraycopy(this.content, 0, n, 0, this.content.length);
-        System.arraycopy(content, 0, n, this.content.length, content.length);
-        this.content = n;
+    public void append(byte[] bytes) {
+        this.content.add(bytes);
     }
 
-    public void preAppend(byte[] content) {
-        byte[] n = new byte[this.content.length + content.length];
-        System.arraycopy(content, 0, n, 0, content.length);
-        System.arraycopy(this.content, 0, n, content.length, this.content.length);
-        this.content = n;
+    public void preAppend(byte[] bytes) {
+        this.content.insert(0, bytes);
     }
 }

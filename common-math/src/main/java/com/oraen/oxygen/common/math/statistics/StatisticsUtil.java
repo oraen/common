@@ -42,11 +42,33 @@ public class StatisticsUtil {
         return max;
     }
 
+    public static int max(int... values){
+        int max = values[0];
+        for(int d : values){
+            if(d > max){
+                max = d;
+            }
+        }
+
+        return max;
+    }
+
 
     //取最小值
     public static double min(double... values){
         double min = values[0];
         for(double d : values){
+            if(d < min){
+                min = d;
+            }
+        }
+
+        return min;
+    }
+
+    public static int min(int... values){
+        int min = values[0];
+        for(int d : values){
             if(d < min){
                 min = d;
             }
