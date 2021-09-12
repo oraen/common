@@ -42,7 +42,15 @@ public class ByteBox {
         return this;
     }
 
-    public ByteBox remove(int startIndex, int endIndex){
+    public ByteBox remove(int... indexes){
+        for(int index : indexes){
+            remove(index);
+        }
+
+        return this;
+    }
+
+    public ByteBox removeScope(int startIndex, int endIndex){
         checkArg(startIndex, endIndex);
         int len = endIndex - startIndex;
         int end = size - 1;
@@ -72,17 +80,23 @@ public class ByteBox {
         return this;
     }
 
-    public ByteBox insert(int index, byte b){
-        checkIndex(index);
+    public ByteBox insert(int poi, byte b){
+        checkArg(poi);
         checkAddSpace(1);
-        int end = size - 1;
-        System.arraycopy(bytes, index, bytes, index + 1, end - index);
+        System.arraycopy(bytes, poi, bytes, poi + 1, size - poi);
         size ++;
+        bytes[poi] = b;
         return this;
 
     }
 
-    public ByteBox insert(int index, byte[] bytes){
+    public ByteBox insert(int poi, byte[] bs){
+        checkArg(poi);
+        int len = bytes.length;
+        checkAddSpace(len);
+        System.arraycopy(bytes, poi, bytes, poi + len, size - poi);
+        size += len;
+        System.arraycopy(bs, 0, bytes, poi, len);
         return this;
     }
 
