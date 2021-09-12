@@ -1,10 +1,10 @@
 package com.oraen.oxygen.common.data.collection.box;
 
 import com.oraen.oxygen.common.math.statistics.StatisticsUtil;
-import jdk.jfr.Threshold;
-
+import com.oraen.oxygen.common.model.exception.ExceptionWrap;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
@@ -181,6 +181,21 @@ public class ByteBox {
         byte[] re = new byte[size];
         System.arraycopy(bytes, 0, re, 0, size);
         return re;
+    }
+
+    public void writeTo(OutputStream os, boolean close){
+        try {
+            os.write(toBytes());
+            if(close){
+                os.close();
+            }
+        } catch (IOException e) {
+            throw new ExceptionWrap(e);
+        }
+    }
+
+    public void writeTo(OutputStream os){
+        writeTo(os, true);
     }
 
     @Override

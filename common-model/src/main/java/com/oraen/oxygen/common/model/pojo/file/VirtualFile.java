@@ -1,6 +1,11 @@
 package com.oraen.oxygen.common.model.pojo.file;
 
 import com.oraen.oxygen.common.data.collection.box.ByteBox;
+import com.oraen.oxygen.common.model.exception.ExceptionWrap;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 public class VirtualFile {
 
@@ -13,6 +18,18 @@ public class VirtualFile {
     private String name;
 
     private ByteBox content;
+
+    public static VirtualFile fromDev(File file){
+        try{
+            if(file.isFile()){
+                return new VirtualFile(file.getParentFile().getCanonicalPath(), file.getName(), new ByteBox(new FileInputStream(file)));
+            }else{
+                return new VirtualFile(file.getParentFile().getCanonicalPath(), file.getName(), new byte[0]);            }
+        }catch (Exception e){
+            throw new ExceptionWrap(e);
+        }
+
+    }
 
     public VirtualFile(){
         this(DEFAULT_FILE_NAME);
@@ -32,6 +49,12 @@ public class VirtualFile {
     }
 
     public VirtualFile(String path, String name, byte[] content){
+        this.setPath(path);
+        this.setName(name);
+        this.setContent(content);
+    }
+
+    public VirtualFile(String path, String name, ByteBox content){
         this.setPath(path);
         this.setName(name);
         this.setContent(content);
@@ -68,10 +91,11 @@ public class VirtualFile {
     }
 
     public void setContent(byte[] bytes) {
-        if(content == null){
-            this.content = new ByteBox(0);
-        }
-        this.content = new ByteBox(bytes);
+        setContent(new ByteBox(bytes));
+    }
+
+    public void setContent(ByteBox byteBox) {
+        this.content = byteBox;
     }
 
     public void append(byte[] bytes) {
@@ -80,5 +104,20 @@ public class VirtualFile {
 
     public void preAppend(byte[] bytes) {
         this.content.insert(0, bytes);
+    }
+
+    public File getFile(){
+        return new File(path + name);
+    }
+
+    public void writeToFile(){
+        File file = getFile();
+        try{
+            if(file.isFile()){
+                content.writeTo(new FileOutputStream(file));
+            }
+        }catch (Exception e){
+            throw new ExceptionWrap(e);
+        }
     }
 }
