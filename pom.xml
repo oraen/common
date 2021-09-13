@@ -12,6 +12,8 @@
         <module>common-math</module>
         <module>common-code</module>
         <module>common-math</module>
+        <module>common-device</module>
+        <module>common-cache</module>
 
     </modules>
     <packaging>pom</packaging>

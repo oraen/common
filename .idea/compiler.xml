@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="common-model" />
-        <module name="common-data" />
-        <module name="common-code" />
+        <module name="common-device" />
         <module name="common-math" />
+        <module name="common-code" />
+        <module name="common-data" />
+        <module name="common-cache" />
+        <module name="common-model" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,10 +25,12 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="common" options="" />
-      <module name="common-code" options="-bootclasspath $PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\rt.jar;$PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\jce.jar -Xlint:deprecation" />
-      <module name="common-data" options="-bootclasspath $PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\rt.jar;$PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\jce.jar -Xlint:deprecation" />
-      <module name="common-math" options="-bootclasspath $PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\rt.jar;$PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\jce.jar -Xlint:deprecation" />
-      <module name="common-model" options="-bootclasspath $PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\rt.jar;$PROJECT_DIR$/../../../../../java/jdk/jdk1.8.0_271/jre\lib\jce.jar -Xlint:deprecation" />
+      <module name="common-cache" options="-bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\jce.jar -Xlint:deprecation" />
+      <module name="common-code" options="-bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\jce.jar -Xlint:deprecation" />
+      <module name="common-data" options="-bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\jce.jar -Xlint:deprecation" />
+      <module name="common-device" options="-bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\jce.jar -Xlint:deprecation" />
+      <module name="common-math" options="-bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\jce.jar -Xlint:deprecation" />
+      <module name="common-model" options="-bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre\lib\jce.jar -Xlint:deprecation" />
     </option>
   </component>
 </project>

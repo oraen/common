@@ -24,7 +24,8 @@ public class VirtualFile {
             if(file.isFile()){
                 return new VirtualFile(file.getParentFile().getCanonicalPath(), file.getName(), new ByteBox(new FileInputStream(file)));
             }else{
-                return new VirtualFile(file.getParentFile().getCanonicalPath(), file.getName(), new byte[0]);            }
+                return new VirtualFile(file.getParentFile().getCanonicalPath(), file.getName(), new byte[0]);
+            }
         }catch (Exception e){
             throw new ExceptionWrap(e);
         }
@@ -79,31 +80,40 @@ public class VirtualFile {
         return name;
     }
 
-    public void setName(String name) {
+    public VirtualFile setName(String name) {
         if(name.indexOf('/') != -1){
             throw new IllegalArgumentException("文件名格式错误 " + name + " 不可包含/");
         }
         this.name = name;
+        return this;
     }
 
     public byte[] getContent() {
         return content.get();
     }
 
-    public void setContent(byte[] bytes) {
-        setContent(new ByteBox(bytes));
+    public VirtualFile setContent(byte[] bytes) {
+        return setContent(new ByteBox(bytes));
     }
 
-    public void setContent(ByteBox byteBox) {
+    public VirtualFile setContent(ByteBox byteBox) {
         this.content = byteBox;
+        return this;
     }
 
-    public void append(byte[] bytes) {
+    public VirtualFile append(byte[] bytes) {
         this.content.add(bytes);
+        return this;
     }
 
-    public void preAppend(byte[] bytes) {
+    public VirtualFile preAppend(byte[] bytes) {
         this.content.insert(0, bytes);
+        return this;
+    }
+
+    public VirtualFile clear() {
+        this.content.clear();
+        return this;
     }
 
     public File getFile(){

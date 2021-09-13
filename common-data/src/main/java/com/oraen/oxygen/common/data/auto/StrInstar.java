@@ -16,10 +16,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//getXXX方法是不应该把可变的data和jsonCache传递出去
 public class StrInstar implements Instar{
-    private String value;
+    private final String value;
 
-    private Object data;
+    private final Object data;
 
     private Type type;
 
@@ -62,7 +63,7 @@ public class StrInstar implements Instar{
 
     @Override
     public byte[] getBytes() {
-        return value == null ? new byte[0] : value.getBytes(GlobalConfig.getDefaultCharset());
+        return value == null ? new byte[0] : value.getBytes(GlobalConfig.DEFAULT_CHARSET);
     }
 
     @Override
@@ -74,7 +75,7 @@ public class StrInstar implements Instar{
     public Map<String, Object> getMap() {
         Type type = getType();
         if(type == Type.OBJ){
-            return (JSONObject)jsonCache;
+            return new HashMap<>((JSONObject)jsonCache);
         }else if(type == Type.LIST){
             return ListConverterUtil.toSKMap((JSONArray)jsonCache);
         }else if(type == Type.NULL){

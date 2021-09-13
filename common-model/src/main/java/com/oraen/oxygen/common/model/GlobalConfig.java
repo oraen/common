@@ -5,9 +5,6 @@ import java.nio.charset.StandardCharsets;
 
 public class GlobalConfig {
 
-    private static final Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
+    public static final Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
 
-    public static Charset getDefaultCharset() {
-        return DEFAULT_CHARSET;
-    }
 }

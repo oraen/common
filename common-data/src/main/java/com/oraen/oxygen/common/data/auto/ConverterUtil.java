@@ -1,4 +1,4 @@
-package com.oraen.oxygen.common.data.display;
+package com.oraen.oxygen.common.data.auto;
 
 import com.oraen.oxygen.common.data.auto.StrInstar;
 
